@@ -62,9 +62,9 @@ const Home = () => {
     setValue(newValue);
   };
 
-  useEffect(() => {
-    readExcelFile();
-  }, []);
+  // useEffect(() => {
+  //   readExcelFile();
+  // }, []);
 
   return (
     <ThemeProvider theme={theme}>

@@ -95,8 +95,12 @@ const Footer = () => {
                 <LinkedInIcon color="white" />
               </IconButton>
             </Box>
-          </DemoPaper>
-          <span className='footer-text'>&copy; 2024 Developed by Dynasty</span>
+          </DemoPaper>         
+        </Grid>
+        <Grid item xs={12} md={4}>
+        <Typography variant="body1" align="center" color="white" sx={{ mb: 4 }}>
+            &copy; 2024 Developed by Dynasty
+          </Typography>
         </Grid>
       </Grid>
     </Box>
