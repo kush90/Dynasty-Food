@@ -1,0 +1,343 @@
+.logo {
+    position: relative;
+    left: -10px;
+}
+.header {
+    background-color: #781fde !important;
+}
+
+.menu-title {
+    text-transform: capitalize !important;
+    text-align: center !important;
+}
+
+.nav {
+    width: 78% !important;
+    margin-left: 50px !important;
+}
+
+.list-item {
+    position: relative;
+    left: 30%;
+}
+
+.list-icon {
+    color: white !important;
+}
+
+
+.font-size {
+
+    font-size: 0.875rem !important;
+}
+
+.contact-address {
+    position: relative;
+    top: -15px;
+}
+
+.about-icon-text {
+    position: relative;
+    top: -20px;
+    font-size: 0.875rem;
+}
+
+.card-text {
+    max-height: 313px !important;
+    overflow-y: auto !important;
+}
+
+.card-image {
+    /* position: relative;
+    top: -15px; */
+    object-fit: fill !important;
+
+}
+
+.disabledSlider {
+    opacity: 1;
+}
+
+.footer {
+    /* position: fixed !important; */
+    bottom: 0 !important;
+    width: 100% !important;
+    background-color: #781fde !important;
+
+    /* height: 200px; */
+    .footer-label {
+        border: 1px solid white;
+        border-radius: 50px;
+        color: white;
+    }
+
+    .footer-text {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        font-size: 0.875rem;
+        position: relative;
+        left: -125%;
+        top: 7%;
+        color: floralwhite;
+    }
+}
+
+.product-search {
+    position: relative;
+    left: -13px;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        position: static !important;
+        margin-top: 24px !important;
+    }
+
+    .login-form {
+        position: static !important;
+        top: 0% !important;
+    }
+
+    .about-height {
+        height: 1074px !important;
+    }
+
+    .about-icon-text {
+        position: relative;
+        top: -14px;
+        font-size: 12px;
+        padding: 2px;
+        word-break: break-all;
+    }
+
+    .contact-map {
+        height: 400px !important;
+    }
+
+    .product-height {
+        height: auto !important;
+    }
+
+    .footer-text {
+        position: relative !important;
+        top: -10% !important;
+        left: 28% !important;
+    }
+    .contact-height {
+        height: none !important;
+    }
+    .register-height {
+        height: fit-content !important;
+    }
+    .lgoin-height {
+        height: fit-content !important;
+    }
+    .home-height {
+        height: 900px !important;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+
+    .login-form {
+        position: static !important;
+        top: 0% !important;
+    }
+
+    .footer {
+        position: static !important;
+        margin-top: 24px !important;
+    }
+
+    .about-height {
+        height: 1074px !important;
+    }
+
+    .register-height {
+        height: 500px !important;
+    }
+
+    .about-icon-text {
+        position: relative;
+        top: -14px;
+        font-size: 12px;
+        padding: 2px;
+        word-break: break-all;
+    }
+
+    .contact-map {
+        height: 400px !important;
+    }
+
+    .product-height {
+        height: auto !important;
+    }
+
+    .footer-text {
+        position: relative !important;
+        top: -10% !important;
+        left: 40% !important;
+    }
+    .register-height {
+        height: fit-content !important;
+    }
+    .login-height {
+        height: fit-content !important;
+    }
+}
+
+@media screen and (min-width: 912px) and (max-width: 1024px) {
+
+    /* Your CSS styles for a screen width of 768px here */
+    .login-form {
+        position: static !important;
+        top: 0% !important;
+    }
+
+    .product-height {
+        height: 1650px !important
+    }
+
+    .footer-text {
+        position: relative !important;
+        top: 10% !important;
+        left: -75% !important;
+    }
+    .contact-height {
+        height: 505px !important;
+    }
+    .register-height {
+        height: 625px !important;
+    }
+}
+
+@media screen and (min-width: 853px) and (max-width: 853px) {
+
+    /* Your CSS styles for a screen width of 768px here */
+    .register-form {
+        height: 840px !important;
+    }
+
+    .login-form {
+        position: static !important;
+    }
+
+    .product-height {
+        height: 2250px !important
+    }
+
+    .footer-text {
+        left: 38% !important;
+        top: -8% !important;
+    }
+    .contact-height {
+        height: 503px !important;
+    }
+    .register-height {
+        height: 1320px !important;
+    }
+    .login-height {
+        height: 945px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1024px) {
+
+    /* Your CSS styles for a screen width of 768px here */
+    .register-form {
+        height: 600px !important;
+    }
+
+    .contact-form {
+        height: 461px !important;
+    }
+
+    .contact-map {
+        height: 485px !important;
+    }
+
+    .login-img {
+        height: 354px !important;
+    }
+
+    .product-height {
+        height: 1650px !important
+    }
+
+    .footer-text {
+        position: relative !important;
+        top: 10% !important;
+        left: -75% !important;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 280px) {
+    .footer-text {
+        left: 20% !important;
+    }
+    .login-height {
+        height: 737px !important;
+    }
+    .contact-height {
+        height: fit-content !important;
+    }
+}
+
+
+@media screen and (min-width: 412px) and (max-width: 430px) {
+    .footer-text {
+        left: 28% !important;
+    }
+    .contact-height{
+        height: 900px !important;
+    }
+    .register-height {
+        height: 890px !important;
+    }
+    .login-height {
+        height: fit-content !important;
+    }
+    .home-height {
+        height: 3300px !important;
+    }
+}
+
+
+@media screen and (min-width: 1280px) and (max-width: 1280px) {
+    .footer-text {
+        left: -77% !important;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 390px) {
+    .footer-text {
+        left: 25% !important;
+    }
+    .register-height {
+        height: 851px !important;
+    }
+    .contact-height {
+        height: fit-content !important;
+    }
+    .home-height {
+        height: 2950px !important;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 540px) {
+    .footer-text {
+        left: 33% !important;
+    }
+    .login-height {
+        height: 930px !important;
+    }
+    .contact-height {
+        height: fit-content !important;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+    .register-height {
+        height: fit-content !important;
+    }
+}
