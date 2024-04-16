@@ -99,7 +99,7 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} md={4}>
         <Typography variant="body1" align="center" color="white" sx={{ mb: 4 }}>
-            &copy; 2024 Developed by Dynasty
+            &copy; 2024 Developed By Dynasty
           </Typography>
         </Grid>
       </Grid>

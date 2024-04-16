@@ -10,7 +10,7 @@ import Register from './public/pages/Register';
 import Login from './public/pages/Login';
 import Home from './public/pages/Home';
 
-import '@fontsource/roboto/500.css';
+// import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/300.css';
 // import '@fontsource/roboto/400.css';
 // import '@fontsource/roboto/700.css';

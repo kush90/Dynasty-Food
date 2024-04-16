@@ -7,7 +7,7 @@
 }
 
 .menu-title {
-    text-transform: capitalize !important;
+    /* text-transform: capitalize !important; */
     text-align: center !important;
 }
 
@@ -269,6 +269,9 @@
         top: 10% !important;
         left: -75% !important;
     }
+    .home-height {
+        height: 1050px !important;
+    }
 }
 
 @media screen and (min-width: 280px) and (max-width: 280px) {
@@ -280,6 +283,9 @@
     }
     .contact-height {
         height: fit-content !important;
+    }
+    .home-height {
+        height: 2000px !important;
     }
 }
 
@@ -333,6 +339,9 @@
     }
     .contact-height {
         height: fit-content !important;
+    }
+    .home-height {
+        height: 4300px !important;
     }
 }
 
