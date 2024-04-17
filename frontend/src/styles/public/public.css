@@ -350,3 +350,25 @@
         height: fit-content !important;
     }
 }
+@media screen and (min-width: 320px) and (max-width: 320px) {
+    .home-height {
+        height: 2330px !important;
+    }
+    .contact-height {
+        height: fit-content !important;
+    }
+}
+@media screen and (min-width: 2560px) and (max-width: 2560px) {
+    .home-height {
+        height: 1700px !important;
+    }
+    .contact-height {
+        height: 500px !important;
+    }
+    .about-height {
+        height: 680px !important;
+    }
+    .product-height {
+        height: 1300px !important;
+    }
+}

@@ -73,7 +73,7 @@ const ImageSlider = () => {
                     </>
                 )}
                 <Button onClick={toggleAutoplay} variant="contained" color="primary" sx={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', fontSize: '.875rem' }}>
-                    {autoplay ? 'Auto Pause' : 'Auto Play'}
+                    {autoplay ? 'Pause' : 'Auto Play'}
                     {autoplay ? <PauseIcon /> : <PlayArrowIcon />}
                 </Button>
             </Box>
