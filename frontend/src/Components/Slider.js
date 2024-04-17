@@ -27,7 +27,7 @@ const ImageSlider = () => {
         if (autoplay) {
             intervalId = setInterval(() => {
                 setActiveIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-            }, 5000); // Change the interval time as needed (5 seconds in this example)
+            }, 2000); // Change the interval time as needed (5 seconds in this example)
         }
 
         return () => {
