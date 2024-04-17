@@ -274,7 +274,7 @@
     }
 }
 
-@media screen and (min-width: 280px) and (max-width: 320px) {
+@media screen and (min-width: 280px) and (max-width: 321px) {
     .footer-text {
         left: 20% !important;
     }
@@ -288,7 +288,7 @@
         height: 2000px !important;
     }
     .register-height {
-        height: fit-content !important;
+        height: 800px !important;
     }
 }
 
