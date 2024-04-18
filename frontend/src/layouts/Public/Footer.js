@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Container, AppBar, Toolbar } from '@mui/material';
+import { Typography, Tooltip } from '@mui/material';
 import '../../styles/public/public.css'
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
@@ -27,7 +27,7 @@ const DemoPaper = styled(Paper)(({ theme }) => ({
 const Footer = () => {
   const location = useLocation();
   const isActiveMobile = (path) => {
-    return location.pathname === path ? { textDecoration:'underline' } : {};
+    return location.pathname === path ? { textDecoration: 'underline' } : {};
   };
   return (
 
@@ -81,24 +81,28 @@ const Footer = () => {
 
           <DemoPaper variant="outlined"> <Typography variant="body1" align="center" color="white" className='footer-label'>Social Media</Typography>
             <Box color="white" style={{ marginTop: '10px' }}  >
-              <IconButton style={{ color: 'white' }} component="a" href="https://www.facebook.com/#" target='_blank'>
-                <FacebookIcon color="white" />
-              </IconButton>
-
+              <Tooltip title="Facebook">
+                <IconButton style={{ color: 'white' }} component="a" href="https://www.facebook.com/#" target='_blank'>
+                  <FacebookIcon color="white" />
+                </IconButton>
+              </Tooltip>
               {/* Instagram Icon */}
-              <IconButton style={{ color: 'white' }} component="a" href="https://www.instagram.com/yourpage" target='_blank'>
-                <InstagramIcon color="white" />
-              </IconButton>
-
+              <Tooltip title="Instagram">
+                <IconButton style={{ color: 'white' }} component="a" href="https://www.instagram.com/yourpage" target='_blank'>
+                  <InstagramIcon color="white" />
+                </IconButton>
+              </Tooltip>
               {/* LinkedIn Icon */}
-              <IconButton style={{ color: 'white' }} component="a" href="https://www.linkedin.com/yourpage" target='_blank'>
-                <LinkedInIcon color="white" />
-              </IconButton>
+              <Tooltip title="LinkedIn">
+                <IconButton style={{ color: 'white' }} component="a" href="https://www.linkedin.com/yourpage" target='_blank'>
+                  <LinkedInIcon color="white" />
+                </IconButton>
+              </Tooltip>
             </Box>
-          </DemoPaper>         
+          </DemoPaper>
         </Grid>
         <Grid item xs={12} md={4}>
-        <Typography variant="body1" align="center" color="white" sx={{ mb: 4 }}>
+          <Typography variant="body1" align="center" color="white" sx={{ mb: 4 }}>
             &copy; 2024 Developed By Dynasty
           </Typography>
         </Grid>

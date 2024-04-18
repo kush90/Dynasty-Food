@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box'; // Import Box component
-import { TextField, FormControl, Button } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 
 import logo from '../../assets/app.jpeg'
 
@@ -34,9 +34,18 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
+    setFirstName(false)
+    setLastName(false)
     setEmailError(false)
     setPasswordError(false)
 
+
+    if (firstName == '') {
+      setFirstNameError(true)
+    }
+    if (lastName == '') {
+      setLastNameError(true)
+    }
     if (email == '') {
       setEmailError(true)
     }
@@ -44,12 +53,12 @@ const Register = () => {
       setPasswordError(true)
     }
 
-    if (email && password) {
-      console.log(email, password)
+    if (firstName && lastName && email && password) {
+      console.log(firstName, lastName, email, password)
     }
   }
   return (
-    <Box sx={{ flexGrow: 1 }} style={{height:'487px'}} className="register-height">
+    <Box sx={{ flexGrow: 1 }} style={{ height: '487px' }} className="register-height">
       <Grid container spacing={1}>
         {/* Column layout for web view */}
         <Grid item xs={12} md={6} lg={6} style={{ maxHeight: '465px' }} className='register-img'>
@@ -66,10 +75,10 @@ const Register = () => {
           <Box sx={{ height: '100%' }}>
             <Item sx={{ height: '100%' }} style={{ boxShadow: 'none' }}>
               <form autoComplete="off" onSubmit={handleSubmit}>
-                <h2 style={{color:'#781fde'}}>Register Form</h2>
+                <h2 style={{ color: '#781fde' }}>Register Form</h2>
                 <TextField
                   label="First Name"
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={e => setFirstName(e.target.value)}
                   required
                   variant="outlined"
                   color="error"
@@ -81,7 +90,7 @@ const Register = () => {
                 />
                 <TextField
                   label="Last Name"
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={e => setLastName(e.target.value)}
                   required
                   variant="outlined"
                   color="error"
@@ -116,9 +125,7 @@ const Register = () => {
                   fullWidth
                   sx={{ mb: 3 }}
                 />
-
-
-                <Button variant="outlined" style={{color:'#781fde',borderColor:'#781fde'}} type="submit">Register</Button>
+                <Button variant="outlined" style={{ color: '#781fde', borderColor: '#781fde' }} type="submit">Register</Button>
 
               </form>
             </Item>

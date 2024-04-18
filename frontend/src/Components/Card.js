@@ -1,5 +1,5 @@
 
-import * as React from 'react';
+import React, { useState } from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
@@ -10,13 +10,22 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { TextField } from "@mui/material";
 import Grid from '@mui/material/Grid';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Typography } from '@mui/material';
+import { Typography,Tooltip } from '@mui/material';
+import ImageSliderModal from './SliderModal';
 
 
 export default function MediaCard() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [open, setOpen] = useState(false);
+  // const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    console.log('open')
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setOpen(false)
+  }
   return (
     <ImageList sx={{ width: '100%' }} cols={isMobile ? 1 : 5}>
       <ImageListItem key="Subheader" cols={isMobile ? 1 : 5}>
@@ -38,8 +47,8 @@ export default function MediaCard() {
             loading="lazy"
           />
           <ImageListItemBar
-            title={item.title + '('  + '\t' + '฿' + item.price + ')'}
-            subtitle={item.description} 
+            title={item.title + '(' + '\t' + '฿' + item.price + ')'}
+            subtitle={item.description}
 
             actionIcon={
               <Grid container spacing={1} alignItems="center">
@@ -49,9 +58,11 @@ export default function MediaCard() {
                   </IconButton> */}
                 </Grid>
                 <Grid item>
-                  <IconButton aria-label={`info about ${item.title}`} sx={{ color: 'white' }}>
+                  <Tooltip title="Image Preview">
+                  <IconButton onClick={handleOpen} aria-label={`info about ${item.title}`} sx={{ color: 'white' }}>
                     <InfoIcon />
                   </IconButton>
+                  </Tooltip>
                 </Grid>
               </Grid>
             }
@@ -61,6 +72,8 @@ export default function MediaCard() {
           </ImageListItemBar>
         </ImageListItem>
       ))}
+      {open && <ImageSliderModal images={['https://images.unsplash.com/photo-1551963831-b3b1ca40c98e', 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25', 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6']} openModal={open} closeModal={handleClose} />}
+
     </ImageList>
   );
 }
