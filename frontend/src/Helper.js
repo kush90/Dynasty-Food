@@ -1,5 +1,7 @@
 import * as XLSX from 'xlsx';
 import sampleFile from './assets/sample.xls';
+import emailjs from 'emailjs-com';
+
 
 export const readExcelFile = async () => {
   const response = await fetch(sampleFile);
@@ -12,3 +14,13 @@ export const readExcelFile = async () => {
   return excelData;
   // Set the state or call a function to handle the Excel data
 };
+
+export const sendEmail = async (form) => {
+  return emailjs
+    .send(
+      'service_5bk7v4d',
+      'template_qi6d2wm',
+      form,
+      'Wo7x7zrpc23-qAiEj'
+    )
+}
