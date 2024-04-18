@@ -10,7 +10,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { TextField } from "@mui/material";
 import Grid from '@mui/material/Grid';
-import { Typography,Tooltip } from '@mui/material';
+import { Typography, Tooltip } from '@mui/material';
 import ImageSliderModal from './SliderModal';
 
 
@@ -28,11 +28,11 @@ export default function MediaCard() {
   }
   return (
     <ImageList sx={{ width: '100%' }} cols={isMobile ? 1 : 5}>
-      <ImageListItem key="Subheader" cols={isMobile ? 1 : 5}>
+      <ImageListItem key="Subheader" cols={isMobile ? 1 : 5} style={{ marginBottom: "20px" }}>
         <ListSubheader component="div">
           <Grid container spacing={2} alignItems="center">
             <Grid item>
-              <TextField className='product-search' id="standard-basic" label="Product Name" variant="standard" />
+              <TextField focused={true} className='product-search' id="standard-basic" label="Product Name" variant="standard" placeholder='Search ...' />
             </Grid>
           </Grid>
         </ListSubheader>
@@ -59,9 +59,9 @@ export default function MediaCard() {
                 </Grid>
                 <Grid item>
                   <Tooltip title="Image Preview">
-                  <IconButton onClick={handleOpen} aria-label={`info about ${item.title}`} sx={{ color: 'white' }}>
-                    <InfoIcon />
-                  </IconButton>
+                    <IconButton onClick={handleOpen} aria-label={`info about ${item.title}`} sx={{ color: 'white' }}>
+                      <InfoIcon />
+                    </IconButton>
                   </Tooltip>
                 </Grid>
               </Grid>
