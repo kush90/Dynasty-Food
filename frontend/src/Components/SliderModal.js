@@ -59,7 +59,6 @@ const ImageSliderModal = ({ images, openModal, closeModal }) => {
                 </DialogContent>
                 <DialogActions style={{ justifyContent: 'center' }}>
                     <Tooltip title="Previous">
-                        <span>
                             <Button onClick={handlePrev} variant="contained" color="primary" disabled={currentImageIndex === 0} sx={{
                                 position: 'absolute', left: 40, top: '55%', transform: 'translateY(-55%)', minWidth: 'auto',
                                 padding: 0, '&:disabled': {
@@ -73,10 +72,8 @@ const ImageSliderModal = ({ images, openModal, closeModal }) => {
 
                                 <NavigateBeforeIcon />
                             </Button>
-                        </span>
                     </Tooltip>
                     <Tooltip title="Next">
-                        <span>
                             <Button onClick={handleNext} variant="contained" color="primary" disabled={currentImageIndex === images.length - 1} sx={{
                                 position: 'absolute', right: 40, top: '55%', transform: 'translateY(-55%)', minWidth: 'auto',
                                 padding: 0, '&:disabled': {
@@ -90,7 +87,6 @@ const ImageSliderModal = ({ images, openModal, closeModal }) => {
 
                                 <NavigateNextIcon />
                             </Button>
-                        </span>
                     </Tooltip>
                 </DialogActions>
             </Dialog>

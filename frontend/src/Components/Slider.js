@@ -62,7 +62,6 @@ const ImageSlider = () => {
                 {!autoplay && (
                     <>
                         <Tooltip title="Previous">
-                            <span>
                                 <Button onClick={handlePrev} variant="contained" color="primary" disabled={activeIndex === 0} sx={{
                                     position: 'absolute', left: 20, top: '50%', transform: 'translateY(-50%)', minWidth: 'auto',
                                     padding: 0, '&:disabled': {
@@ -76,10 +75,8 @@ const ImageSlider = () => {
 
                                     <NavigateBeforeIcon />
                                 </Button>
-                            </span>
                         </Tooltip>
                         <Tooltip title="Next">
-                            <span>
                                 <Button onClick={handleNext} variant="contained" color="primary" disabled={activeIndex === images.length - 1} sx={{
                                     position: 'absolute', right: 20, top: '50%', transform: 'translateY(-50%)', minWidth: 'auto',
                                     padding: 0, '&:disabled': {
@@ -93,7 +90,6 @@ const ImageSlider = () => {
 
                                     <NavigateNextIcon />
                                 </Button>
-                            </span>
                         </Tooltip>
                     </>
                 )}
