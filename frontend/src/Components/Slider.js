@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, Tooltip } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -44,35 +44,60 @@ const ImageSlider = () => {
         <Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
                 <img src={images[activeIndex]} alt={`Slide ${activeIndex + 1}`} style={{ width: '100%', maxHeight: 400, objectFit: 'cover' }} />
+                <Typography
+                    variant="caption"
+                    component="div"
+                    sx={{
+                        position: 'absolute',
+                        top: 10,
+                        left: 10,
+                        color: 'white',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        padding: '2px 6px',
+                        borderRadius: 4,
+                    }}
+                >
+                    {`${activeIndex + 1} / ${images.length}`}
+                </Typography>
                 {!autoplay && (
                     <>
-                        <Button onClick={handlePrev} variant="contained" color="primary" disabled={activeIndex === 0} sx={{
-                            position: 'absolute', left: 20, top: '50%', transform: 'translateY(-50%)', '&:disabled': {
-                                color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
-                                cursor: 'not-allowed', // Customize the cursor for disabled state
-                                // Add any additional styles for disabled state
-                                backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
+                        <Tooltip title="Previous">
+                            <span>
+                                <Button onClick={handlePrev} variant="contained" color="primary" disabled={activeIndex === 0} sx={{
+                                    position: 'absolute', left: 20, top: '50%', transform: 'translateY(-50%)', minWidth: 'auto',
+                                    padding: 0, '&:disabled': {
+                                        color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
+                                        cursor: 'not-allowed', // Customize the cursor for disabled state
+                                        // Add any additional styles for disabled state
+                                        backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
 
-                            },
-                        }}>
-                            Previous
-                            <NavigateBeforeIcon />
-                        </Button>
-                        <Button onClick={handleNext} variant="contained" color="primary" disabled={activeIndex === images.length - 1} sx={{
-                            position: 'absolute', right: 20, top: '50%', transform: 'translateY(-50%)', '&:disabled': {
-                                color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
-                                cursor: 'not-allowed', // Customize the cursor for disabled state
-                                // Add any additional styles for disabled state
-                                backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
+                                    },
+                                }}>
 
-                            },
-                        }}>
-                            Next
-                            <NavigateNextIcon />
-                        </Button>
+                                    <NavigateBeforeIcon />
+                                </Button>
+                            </span>
+                        </Tooltip>
+                        <Tooltip title="Next">
+                            <span>
+                                <Button onClick={handleNext} variant="contained" color="primary" disabled={activeIndex === images.length - 1} sx={{
+                                    position: 'absolute', right: 20, top: '50%', transform: 'translateY(-50%)', minWidth: 'auto',
+                                    padding: 0, '&:disabled': {
+                                        color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
+                                        cursor: 'not-allowed', // Customize the cursor for disabled state
+                                        // Add any additional styles for disabled state
+                                        backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
+
+                                    },
+                                }}>
+
+                                    <NavigateNextIcon />
+                                </Button>
+                            </span>
+                        </Tooltip>
                     </>
                 )}
-                <Button onClick={toggleAutoplay} variant="contained" color="primary" sx={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', fontSize: '.875rem' }}>
+                <Button onClick={toggleAutoplay} variant="contained" color="primary" sx={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', fontSize: '.650rem', padding: '6px 12px' }}>
                     {autoplay ? 'Pause' : 'Auto Play'}
                     {autoplay ? <PauseIcon /> : <PlayArrowIcon />}
                 </Button>
