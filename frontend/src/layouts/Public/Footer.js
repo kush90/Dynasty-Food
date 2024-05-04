@@ -7,8 +7,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import IconButton from '@mui/material/IconButton';
@@ -39,13 +37,13 @@ const Footer = () => {
             <Typography variant="body1" align="center" color="white" className='footer-label'>Contact Address</Typography>
             <Box style={{ marginTop: '10px' }} >
               <Typography variant="body1" className='font-size' sx={{ mb: 1 }}>
-                <strong>Email:</strong> example@example.com
+                <strong>Email:</strong> orders@dynastyfood.co.th
               </Typography>
               <Typography className='font-size' variant="body1" sx={{ mb: 1 }}>
-                <strong>Phone:</strong> +123 456 7890
+                <strong>Phone:</strong> 081-536-5550 or 099-7356710
               </Typography>
               <Typography className='font-size' variant="body1" sx={{ mb: 1 }}>
-                <strong>Address:</strong> 123 Main St, City, Country
+                <strong>Address:</strong> หมู่ที่ 8 Bang Chueak Nang, Taling Chan, Bangkok 10170
               </Typography>
             </Box>
           </DemoPaper>
@@ -82,20 +80,8 @@ const Footer = () => {
           <DemoPaper variant="outlined"> <Typography variant="body1" align="center" color="white" className='footer-label'>Social Media</Typography>
             <Box color="white" style={{ marginTop: '10px' }}  >
               <Tooltip title="Facebook">
-                <IconButton style={{ color: 'white' }} component="a" href="https://www.facebook.com/#" target='_blank'>
+                <IconButton style={{ color: 'white' }} component="a" href="https://www.facebook.com/dynastyfoodproducts?mibextid=LQQJ4d" target='_blank'>
                   <FacebookIcon color="white" />
-                </IconButton>
-              </Tooltip>
-              {/* Instagram Icon */}
-              <Tooltip title="Instagram">
-                <IconButton style={{ color: 'white' }} component="a" href="https://www.instagram.com/yourpage" target='_blank'>
-                  <InstagramIcon color="white" />
-                </IconButton>
-              </Tooltip>
-              {/* LinkedIn Icon */}
-              <Tooltip title="LinkedIn">
-                <IconButton style={{ color: 'white' }} component="a" href="https://www.linkedin.com/yourpage" target='_blank'>
-                  <LinkedInIcon color="white" />
                 </IconButton>
               </Tooltip>
             </Box>
@@ -103,7 +89,7 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} md={4}>
           <Typography variant="body1" align="center" color="white" sx={{ mb: 4 }}>
-            &copy; 2024 Developed By Dynasty
+            &copy; 2024, Developed By Dynasty Food Products
           </Typography>
         </Grid>
       </Grid>

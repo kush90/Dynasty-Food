@@ -58,7 +58,7 @@ const Contact = () => {
         {/* First column with one row */}
         <Grid item xs={12} sm={4} className='contact-map' style={{ height: '485px', boxShadow: 'none' }}>
           <Paper sx={{ height: '100%', boxShadow: 'none' }}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d31005.338306978625!2d100.42957368526942!3d13.738582220865275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x30e2975de6ed80f1%3A0x682c8e189aa0344d!2zUENQUStSOVEgTWluaSBCaWcgQyAtIEJhbmcgV2FlayA2Miwg4Lia4Liy4LiH4LmB4Lin4LiBIDYyIEJhbmcgV2FlaywgUGhhc2kgQ2hhcm9lbiwgQmFuZ2tvayAxMDE2MA!3m2!1d13.7370776!2d100.43848779999999!5e0!3m2!1sen!2sth!4v1712725795509!5m2!1sen!2sth" width="100%"
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30564418.488356546!2d87.5891690432592!3d23.893222895520967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29770eaaaaaab%3A0x319aac8021fc66d1!2sDynasty%20Food%20Products%20Ltd!5e0!3m2!1sen!2sth!4v1714834672008!5m2!1sen!2sth" width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
@@ -77,13 +77,14 @@ const Contact = () => {
                 </Typography>
                 {/* <Box className="contact-address"> */}
                 <Typography variant="body1" className='font-size' sx={{ mb: 1 }}>
-                  <strong>Email:</strong> example@example.com
+                  <strong>Email:</strong> orders@dynastyfood.co.th
                 </Typography>
                 <Typography className='font-size' variant="body1" sx={{ mb: 1 }}>
-                  <strong>Phone:</strong> +123 456 7890
+                  <strong>Phone:</strong> 081-536-5550 or 099-7356710
                 </Typography>
                 <Typography className='font-size' variant="body1" sx={{ mb: 1 }}>
-                  <strong>Address:</strong> 123 Main St, City, Country
+                  <strong>Address:</strong> หมู่ที่ 8 Bang Chueak Nang, Taling Chan, Bangkok 10170
+
                 </Typography>
                 {/* </Box> */}
               </Paper>
