@@ -375,3 +375,38 @@
         height: 1300px !important;
     }
 }
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make the container fill the height of its parent */
+    /* margin: 50%; */
+}
+.pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .pagination .active {
+    font-weight: bold;
+    color: #781fde;
+  }
+  .pagination .disabled {
+    pointer-events: none;
+    opacity: 0.5; /* You can adjust the opacity to visually indicate the button is disabled */
+  }
+  .product-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-wrap: break-word;
+  }  
+  
+  

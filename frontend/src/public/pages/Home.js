@@ -98,18 +98,24 @@ const Home = () => {
                   </Box>
                   <div role="tabpanel" hidden={value !== 0} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
                     <Box sx={{ p: 3 }}>
-                      <MediaCard style={{ margin: '5px' }} />
+                      <MediaCard products={itemData} style={{ margin: '5px' }} />
                     </Box>
                   </div>
-                  <CustomTabPanel value={value} index={1}>
-                    <MediaCard style={{ margin: '5px' }} />
-                  </CustomTabPanel>
-                  <CustomTabPanel value={value} index={2}>
-                    <MediaCard style={{ margin: '5px' }} />
-                  </CustomTabPanel>
-                  <CustomTabPanel value={value} index={3}>
-                    <MediaCard style={{ margin: '5px' }} />
-                  </CustomTabPanel>
+                  <div role="tabpanel" hidden={value !== 1} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+                    <Box sx={{ p: 3 }}>
+                      <MediaCard products={itemData} style={{ margin: '5px' }} />
+                    </Box>
+                  </div>
+                  <div role="tabpanel" hidden={value !== 2} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+                    <Box sx={{ p: 3 }}>
+                      <MediaCard products={itemData} style={{ margin: '5px' }} />
+                    </Box>
+                  </div>
+                  <div role="tabpanel" hidden={value !== 3} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+                    <Box sx={{ p: 3 }}>
+                      <MediaCard products={itemData} style={{ margin: '5px' }} />
+                    </Box>
+                  </div>
                 </Paper>
               </Grid>
             </Grid>
@@ -121,3 +127,78 @@ const Home = () => {
 }
 
 export default Home
+
+const itemData = [
+  {
+    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    productName: 'Breakfast',
+    description: 'lorem ipsum',
+    price: 130,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    productName: 'Burger',
+    description: 'lorem ipsum',
+    price: 150,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    productName: 'Camera',
+    description: 'lorem ipsum',
+    price: 80,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    productName: 'Coffee',
+    description: 'lorem ipsum',
+    price: 90,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+    productName: 'Hats',
+    description: 'lorem ipsum',
+    price: 30,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+    productName: 'Honey',
+    description: 'lorem ipsum',
+    price: 30,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    productName: 'Basketball',
+    description: 'lorem ipsum',
+    price: 30,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
+    productName: 'Fern',
+    description: 'lorem ipsum',
+    price: 230,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
+    productName: 'Mushrooms',
+    description: 'lorem ipsum',
+    price: 77,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
+    productName: 'Tomato basil',
+    description: 'lorem ipsum',
+    price: 330,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
+    productName: 'Sea star',
+    description: 'lorem ipsum',
+    price: 200,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
+    productName: 'Bike',
+    description: 'lorem ipsum',
+    price: 30,
+  },
+];
