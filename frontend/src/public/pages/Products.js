@@ -64,7 +64,10 @@ const Products = () => {
     .slice(pageNumber * productsPerPage, (pageNumber + 1) * productsPerPage);
 
 
+    const clearButtonClass = (searchTerm !== '' || categorySearchTerm !== '') ? 'active-clear-filter' : '';
+
   return (
+    
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, height: '800px' }} className="product-height">
         <Grid container spacing={2}>
@@ -99,7 +102,7 @@ const Products = () => {
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                       />
-                      <Button variant="outlined" onClick={()=>clearSearch()} endIcon={<SearchOffIcon />}>
+                      <Button variant="outlined" onClick={()=>clearSearch()} className={clearButtonClass} endIcon={<SearchOffIcon />}>
                         Clear Filter
                       </Button>
                     </Grid>
