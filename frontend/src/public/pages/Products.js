@@ -130,6 +130,9 @@ const Products = () => {
                         containerClassName='pagination'
                         activeClassName={'active'}
                         disabledClassName={'disabled'}
+                        previousLabel={<span style={{ color: '#781fde' }}>Previous</span>} // Change color of previous button text
+                        nextLabel={<span style={{ color: '#781fde' }}>Next</span>} // Change color of next button text
+
                       />
                     </Box>
                   )}
