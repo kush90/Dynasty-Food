@@ -34,7 +34,7 @@ function Navbar() {
 
 
     const isActive = (path) => {
-        return location.pathname === path ? { backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white' } : {};
+        return location.pathname === path ? { backgroundColor: 'rgba(255, 255, 255, 0.2)', color: 'white' } : {};
     };
 
     const isActiveMobile = (path) => {
@@ -54,13 +54,17 @@ function Navbar() {
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
+                            fontFamily:'TTCommons',
+                            fontWeight: 500,
                             color: 'white',
+                            fontSize: 17,
                             textDecoration: 'none',
                         }}
                     >
-                        Dynasty Food
+                       <div className='header-text'>
+                        <p>DYNASTY</p>
+                        <p className='header-second-text'>FOOD PRODUCTS</p>
+                       </div>
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -118,10 +122,11 @@ function Navbar() {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             color: 'white',
+                            fontSize:13,
                             textDecoration: 'none',
                         }}
                     >
-                        Dynasty Food
+                        DYNASTY FOOD PRODUCTS
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (

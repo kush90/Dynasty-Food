@@ -13,8 +13,10 @@ import GroupsIcon from '@mui/icons-material/Groups';
 
 const ResponsiveImage = styled('img')({
   maxWidth: '100%',
-  height: '100%',
+  height: 'auto',
   display: 'block',
+  position: 'relative',
+  top: '13%',
 });
 
 const About = () => {
@@ -25,7 +27,6 @@ const About = () => {
         <Grid item xs={12} sm={4} className='contact-map' style={{ height: '595px' }}>
           <Paper sx={{ height: '100%', boxShadow: 'none' }}>
             <ResponsiveImage src={logo} alt="Logo" />
-
           </Paper>
         </Grid>
 

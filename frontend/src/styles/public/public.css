@@ -4,6 +4,19 @@
 }
 .header {
     background-color: black !important;
+    .header-text {
+    height: 96px;
+    position: relative;
+    top: 23px;
+    left: 0px;
+     p {
+        margin:0px;
+     }
+     .header-second-text {
+        position: relative;
+        top:-5px;
+     }
+    }
 }
 
 .menu-title {
