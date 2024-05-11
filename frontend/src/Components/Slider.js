@@ -62,38 +62,59 @@ const ImageSlider = () => {
                 {!autoplay && (
                     <>
                         <Tooltip title="Previous">
-                                <Button onClick={handlePrev} variant="contained" color="primary" disabled={activeIndex === 0} sx={{
-                                    position: 'absolute', left: 20, top: '50%', transform: 'translateY(-50%)', minWidth: 'auto',
-                                    padding: 0, '&:disabled': {
+                            <Button onClick={handlePrev} variant="contained" color="primary" disabled={activeIndex === 0}
+                                sx={{
+                                    position: 'absolute',
+                                    left: 20,
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    minWidth: 'auto',
+                                    padding: 0,
+                                    '&:disabled': {
                                         color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
                                         cursor: 'not-allowed', // Customize the cursor for disabled state
                                         // Add any additional styles for disabled state
-                                        backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
-
+                                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Background color with opacity (50%)
                                     },
-                                }}>
+                                    // Add these styles for the active state (when not disabled)
+                                    '&:not(:disabled)': {
+                                        color: 'white', // Change text color to black
+                                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change background color to black with opacity
+                                    },
+                                }}
+                            >
 
-                                    <NavigateBeforeIcon />
-                                </Button>
+                                <NavigateBeforeIcon />
+                            </Button>
                         </Tooltip>
                         <Tooltip title="Next">
-                                <Button onClick={handleNext} variant="contained" color="primary" disabled={activeIndex === images.length - 1} sx={{
+                            <Button onClick={handleNext} variant="contained" color="primary" disabled={activeIndex === images.length - 1}
+                                sx={{
                                     position: 'absolute', right: 20, top: '50%', transform: 'translateY(-50%)', minWidth: 'auto',
-                                    padding: 0, '&:disabled': {
-                                        color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
+                                    padding: 0,
+                                    '&:disabled': {
+                                        color: 'white', // Customize the text color for disabled state
                                         cursor: 'not-allowed', // Customize the cursor for disabled state
                                         // Add any additional styles for disabled state
-                                        backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
+                                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Background color with opacity (50%)
 
+                                    },
+                                    '&:not(:disabled)': {
+                                        color: 'white', // Change text color to black
+                                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change background color to black with opacity
                                     },
                                 }}>
 
-                                    <NavigateNextIcon />
-                                </Button>
+                                <NavigateNextIcon />
+                            </Button>
                         </Tooltip>
                     </>
                 )}
-                <Button onClick={toggleAutoplay} variant="contained" color="primary" sx={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', fontSize: '.650rem', padding: '6px 12px' }}>
+                <Button onClick={toggleAutoplay} variant="contained" sx={{
+                    color: 'white', // Text color
+                    backgroundColor: 'black', // Button color
+                    '&:hover': { backgroundColor: 'black' }, position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', fontSize: '.650rem', padding: '6px 12px'
+                }}>
                     {autoplay ? 'Pause' : 'Auto Play'}
                     {autoplay ? <PauseIcon /> : <PlayArrowIcon />}
                 </Button>

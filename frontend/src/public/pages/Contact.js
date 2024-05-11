@@ -72,7 +72,7 @@ const Contact = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} >
               <Paper style={{ padding: 10, minHeight: '145px', boxShadow: 'none' }}>
-                <Typography variant="h6" gutterBottom style={{ color: '#781fde' }}>
+                <Typography variant="h6" gutterBottom style={{ color: 'black' }}>
                   Contact Address
                 </Typography>
                 {/* <Box className="contact-address"> */}
@@ -106,7 +106,7 @@ const Contact = () => {
                   </Snackbar>
                 )}
                 <form onSubmit={handleSubmit}>
-                  <Typography variant="h6" gutterBottom style={{ color: '#781fde' }}>
+                  <Typography variant="h6" gutterBottom style={{ color: 'black' }}>
                     Contact Form
                   </Typography>
                   <Grid container spacing={2} alignItems="center">
@@ -162,8 +162,8 @@ const Contact = () => {
 
                       variant="outlined" type="submit"
                       style={{
-                        color: '#781fde',
-                        borderColor: '#781fde',
+                        color: 'black',
+                        borderColor: 'black',
                         opacity: (loading) ? 0.5 : 1, // Adjust opacity when disabled
                       }}>  {!loading ? 'Submit' : 'Loading ..'}
                     </Button>

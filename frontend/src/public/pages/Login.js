@@ -62,7 +62,7 @@ const Login = () => {
         <Box sx={{ height: '100%' }}>
           <Item sx={{ height: '100%' }} style={{ boxShadow: 'none' }}>
             <form autoComplete="off" onSubmit={handleSubmit} className='login-form'>
-              <h2 style={{color:'#781fde'}}>Login Form</h2>
+              <h2 style={{color:'black'}}>Login Form</h2>
               <TextField
                 label="Email"
                 onChange={e => setEmail(e.target.value)}
@@ -91,7 +91,7 @@ const Login = () => {
                 textDecoration: 'underline',
                 color: 'blue',
               }} style={{ float: 'left' }}>Forgot Password !</Typography>
-              <Button variant="outlined" style={{color:'#781fde',borderColor:'#781fde'}} type="submit">Login</Button>
+              <Button variant="outlined" style={{color:'black',borderColor:'black'}} type="submit">Login</Button>
 
             </form>
           </Item>

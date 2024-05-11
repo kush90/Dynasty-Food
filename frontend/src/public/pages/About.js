@@ -34,7 +34,7 @@ const About = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} style={{ minHeight: '300px' }}>
               <Paper style={{ padding: 10 }} sx={{ height: '100%', boxShadow: 'none' }}>
-                <Typography variant="h6" gutterBottom style={{color:'#781fde'}}>
+                <Typography variant="h6" gutterBottom style={{color:'black'}}>
                   Company History
                 </Typography>
                 <Box style={{ maxHeight: '300px', overflowY: 'scroll' }}>
@@ -62,7 +62,7 @@ const About = () => {
 
                     <Grid container spacing={1}>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
-                        <BusinessIcon  style={{ width: '50%', height: '50%', marginTop: '20px', color:'#781fde' }} />
+                        <BusinessIcon color='default'  style={{ width: '50%', height: '50%', marginTop: '20px'}} />
                       </Grid>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
                         <span className='about-icon-text'> Established Years (10 +)</span>
@@ -72,7 +72,7 @@ const About = () => {
                   <Paper elevation={3} style={{ display: 'flex', alignItems: 'center', width: 'calc(25% - 20px)', height: '100%' }} className='child'>
                     <Grid container spacing={1}>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
-                        <GroupAddIcon color="success" style={{ width: '50%', height: '50%', marginTop: '20px' }} />
+                        <GroupAddIcon color="default" style={{ width: '50%', height: '50%', marginTop: '20px' }} />
                       </Grid>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
                         <span className='about-icon-text'>Suppliers (100 +)</span>
@@ -82,7 +82,7 @@ const About = () => {
                   <Paper elevation={3} style={{ display: 'flex', alignItems: 'center', width: 'calc(25% - 20px)', height: '100%' }} className='child'>
                     <Grid container spacing={1}>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
-                        <ListAltIcon color="error" style={{ width: '50%', height: '50%', marginTop: '20px' }} />
+                        <ListAltIcon color="default" style={{ width: '50%', height: '50%', marginTop: '20px' }} />
                       </Grid>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
                         <span className='about-icon-text'>Products (3000 +)</span>
@@ -92,7 +92,7 @@ const About = () => {
                   <Paper elevation={3} style={{ display: 'flex', alignItems: 'center', width: 'calc(25% - 20px)', height: '100%' }} className='child'>
                     <Grid container spacing={1}>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
-                        <GroupsIcon color='info' style={{ width: '50%', height: '50%', marginTop: '20px' }} />
+                        <GroupsIcon color='default' style={{ width: '50%', height: '50%', marginTop: '20px' }} />
                       </Grid>
                       <Grid item xs={12} style={{ textAlign: 'center' }}>
                         <span className='about-icon-text'>Staffs (20 +)</span>

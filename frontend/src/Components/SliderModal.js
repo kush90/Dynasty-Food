@@ -23,7 +23,6 @@ const ImageSliderModal = ({ images, openModal, closeModal }) => {
 
     return (
         <>
-            {/* <Button variant="outlined" onClick={handleOpen}>Open Image Slider</Button> */}
             <Dialog open={open} onClose={handleClose} TransitionComponent={Slide} maxWidth="md" fullWidth>
                 <DialogTitle>
                     <Tooltip title="close">
@@ -31,7 +30,7 @@ const ImageSliderModal = ({ images, openModal, closeModal }) => {
                             <Close />
                         </IconButton>
                     </Tooltip>
-                    <span style={{ textAlign: 'center', color: '#781fde', fontSize: '16px', marginLeft: '10px' }}>Image Preview</span>
+                    <span style={{ textAlign: 'center', color: 'black', fontSize: '16px', marginLeft: '10px' }}>Image Preview</span>
 
                 </DialogTitle>
                 <DialogContent>
@@ -61,12 +60,17 @@ const ImageSliderModal = ({ images, openModal, closeModal }) => {
                     <Tooltip title="Previous">
                             <Button onClick={handlePrev} variant="contained" color="primary" disabled={currentImageIndex === 0} sx={{
                                 position: 'absolute', left: 40, top: '55%', transform: 'translateY(-55%)', minWidth: 'auto',
-                                padding: 0, '&:disabled': {
+                                padding: 0,
+                                 '&:disabled': {
                                     color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
                                     cursor: 'not-allowed', // Customize the cursor for disabled state
                                     // Add any additional styles for disabled state
-                                    backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Background color with opacity (50%)
 
+                                },
+                                '&:not(:disabled)': {
+                                    color: 'white', // Change text color to black
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change background color to black with opacity
                                 },
                             }}>
 
@@ -76,12 +80,17 @@ const ImageSliderModal = ({ images, openModal, closeModal }) => {
                     <Tooltip title="Next">
                             <Button onClick={handleNext} variant="contained" color="primary" disabled={currentImageIndex === images.length - 1} sx={{
                                 position: 'absolute', right: 40, top: '55%', transform: 'translateY(-55%)', minWidth: 'auto',
-                                padding: 0, '&:disabled': {
+                                padding: 0,
+                                 '&:disabled': {
                                     color: 'rgba(255, 255, 255, 0.3)', // Customize the text color for disabled state
                                     cursor: 'not-allowed', // Customize the cursor for disabled state
                                     // Add any additional styles for disabled state
-                                    backgroundColor: 'rgba(120, 31, 222, 0.3)', // Background color with opacity (50%)
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Background color with opacity (50%)
 
+                                },
+                                '&:not(:disabled)': {
+                                    color: 'white', // Change text color to black
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change background color to black with opacity
                                 },
                             }}>
 

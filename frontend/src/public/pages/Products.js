@@ -13,13 +13,13 @@ import SearchOffIcon from '@mui/icons-material/SearchOff';
 // Import pagination library
 import ReactPaginate from 'react-paginate';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#781fde',
-    },
-  },
-});
+// const theme = createTheme({
+//   palette: {
+//     // primary: {
+//     //   main: '#781fde',
+//     // },
+//   },
+// });
 
 const Products = () => {
   const [products, setProducts] = React.useState([]);
@@ -64,26 +64,23 @@ const Products = () => {
     .slice(pageNumber * productsPerPage, (pageNumber + 1) * productsPerPage);
 
 
-    const clearButtonClass = (searchTerm !== '' || categorySearchTerm !== '') ? 'active-clear-filter' : '';
+    const clearButtonClass = (searchTerm !== '' || categorySearchTerm !== '') ? 'active-clear-filter' : 'clear-btn';
 
   return (
     
-    <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, height: '800px' }} className="product-height">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={12}>
                 <Paper style={{ padding: 10, boxShadow: 'none', margin: 'auto' }}>
-                  <Typography variant="h6" gutterBottom style={{ color: '#781fde' }}>
+                  <Typography variant="h6" gutterBottom style={{ color: 'black' }}>
                     Products
                   </Typography>
                   <Grid container spacing={2} alignItems="center">
                     <Grid item>
                       <TextField
-                        sx={{ marginLeft: '15px' }}
-                        focused={true}
-                        className='product-search'
+                        className={'product-search product-margin-left-15'}
                         id="standard-basic"
                         label="Product Category"
                         variant="standard"
@@ -92,9 +89,7 @@ const Products = () => {
                         onChange={(e) => setCategorySearchTerm(e.target.value)}
                       />
                       <TextField
-                        sx={{ marginLeft: '15px' }}
-                        focused={true}
-                        className='product-search'
+                        className={'product-search product-margin-left-15'}
                         id="standard-basic"
                         label="Product Name"
                         variant="standard"
@@ -102,7 +97,7 @@ const Products = () => {
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                       />
-                      <Button variant="outlined" onClick={()=>clearSearch()} className={clearButtonClass} endIcon={<SearchOffIcon />}>
+                      <Button variant="outlined" onClick={()=>clearSearch()} className={clearButtonClass}>
                         Clear Filter
                       </Button>
                     </Grid>
@@ -130,8 +125,8 @@ const Products = () => {
                         containerClassName='pagination'
                         activeClassName={'active'}
                         disabledClassName={'disabled'}
-                        previousLabel={<span style={{ color: '#781fde' }}>Previous</span>} // Change color of previous button text
-                        nextLabel={<span style={{ color: '#781fde' }}>Next</span>} // Change color of next button text
+                        previousLabel={<span style={{ color: 'black' }}>Previous</span>} // Change color of previous button text
+                        nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
 
                       />
                     </Box>
@@ -142,7 +137,6 @@ const Products = () => {
           </Grid>
         </Grid>
       </Box>
-    </ThemeProvider>
   )
 }
 

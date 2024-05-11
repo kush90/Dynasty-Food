@@ -3,7 +3,7 @@
     left: -10px;
 }
 .header {
-    background-color: #781fde !important;
+    background-color: black !important;
 }
 
 .menu-title {
@@ -62,7 +62,7 @@
     /* position: fixed !important; */
     bottom: 0 !important;
     width: 100% !important;
-    background-color: #781fde !important;
+    background-color: black !important;
 
     /* height: 200px; */
     .footer-label {
@@ -395,7 +395,7 @@
   
   .pagination .active {
     font-weight: bold;
-    color: #781fde;
+    color: black;
   }
   .pagination .disabled {
     pointer-events: none;
@@ -412,7 +412,19 @@
     background-color: #ff0000 !important; /* Red background color */
     color: #ffffff !important; /* White text color */
     border-color: #ff0000 !important; /* Red border color */
+    position: relative !important;
+    top:6px !important;
+   
     /* Add any other styles you want for the active state */
-  }  
+}
+.clear-btn {
+    position: relative !important;
+    top:6px !important;
+    color: black !important;
+    border-color: black !important;
+}
+.product-margin-left-15 {
+    margin-left: 25px !important;
+}  
   
   

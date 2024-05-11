@@ -12,14 +12,6 @@ import MediaCard from '../../Components/Card';
 import { readExcelFile } from "../../Helper";
 
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#781fde', // Define your success color here
-    },
-  },
-});
-
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -67,7 +59,6 @@ const Home = () => {
   // }, []);
 
   return (
-    <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, width: '100%' }} height="1200px" className="home-height">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
@@ -81,6 +72,15 @@ const Home = () => {
                 <Paper style={{ padding: 10, height: '268px', boxShadow: 'none' }}>
                   <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs
+                     sx={{
+                      '& .Mui-selected': {
+                        color: 'black',
+                        borderBottom: '2px solid black',
+                      },
+                      '& .MuiTabs-indicator': {
+                        backgroundColor: 'black', // Set the indicator color to black
+                      },
+                    }}
                       value={value}
                       onChange={handleChange}
                       textColor="primary" // Set the text color using inline styles
@@ -122,7 +122,6 @@ const Home = () => {
           </Grid>
         </Grid>
       </Box>
-    </ThemeProvider>
   )
 }
 

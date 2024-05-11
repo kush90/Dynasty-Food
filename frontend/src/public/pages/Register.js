@@ -75,7 +75,7 @@ const Register = () => {
           <Box sx={{ height: '100%' }}>
             <Item sx={{ height: '100%' }} style={{ boxShadow: 'none' }}>
               <form autoComplete="off" onSubmit={handleSubmit}>
-                <h2 style={{ color: '#781fde' }}>Register Form</h2>
+                <h2 style={{ color: 'black' }}>Register Form</h2>
                 <TextField
                   label="First Name"
                   onChange={e => setFirstName(e.target.value)}
@@ -125,7 +125,7 @@ const Register = () => {
                   fullWidth
                   sx={{ mb: 3 }}
                 />
-                <Button variant="outlined" style={{ color: '#781fde', borderColor: '#781fde' }} type="submit">Register</Button>
+                <Button variant="outlined" style={{ color: 'black', borderColor: 'black' }} type="submit">Register</Button>
 
               </form>
             </Item>
