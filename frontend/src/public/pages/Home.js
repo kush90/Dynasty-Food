@@ -136,23 +136,6 @@ const Home = () => {
                       <MediaCard products={brands}  showPreview="false" type="brands"  style={{ margin: '5px' }} />
                     }
                   </Box>
-                  <Box>
-                    {
-                      (!loading && brands.length > 0) &&
-                      <ReactPaginate
-                        pageCount={Math.ceil(brands.length / productsPerPage)}
-                        pageRangeDisplayed={3}
-                        marginPagesDisplayed={1}
-                        onPageChange={handlePageChange}
-                        containerClassName='pagination'
-                        activeClassName={'active'}
-                        disabledClassName={'disabled'}
-                        previousLabel={<span style={{ color: 'black' }}>Previous</span>} // Change color of previous button text
-                        nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
-
-                      />
-                    }
-                  </Box>
                 </div>
                 <div role="tabpanel" hidden={value !== 1} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
                   <Box sx={{ p: 3 }}>
