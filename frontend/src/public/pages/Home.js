@@ -1,15 +1,17 @@
-import React,{useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ImageSlider from '../../Components/Slider';
 import PropTypes from 'prop-types';
 import MediaCard from '../../Components/Card';
-import { readExcelFile } from "../../Helper";
+import { readExcelFile2,readExcelFile1 } from "../../Helper";
+import home from '../../assets/home.xlsx';
+import brand from '../../assets/brand.xlsx'
+import ReactPaginate from 'react-paginate';
 
 
 function CustomTabPanel(props) {
@@ -44,35 +46,62 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
+const tabLabels = ['Top UK & US Brands', 'New arrival', 'Special Price', 'Best seller'];
 
 
 const Home = () => {
-
+  const [brands, setBrands] = React.useState([]);
+  const [products, setProducts] = React.useState([]);
   const [value, setValue] = React.useState(0);
+  const [pageNumber, setPageNumber] = useState(0); // State for current page number
+  const [loading, setLoading] = useState(false);
 
+  const productsPerPage = 15; // Number of products per page
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    getProduct(tabLabels[newValue])
   };
 
-  // useEffect(() => {
-  //   readExcelFile();
-  // }, []);
+  const getProduct = async (byValue) => {
+    setLoading(true);
+    let result = await readExcelFile2(home, byValue);
+    setProducts(result);
+    setLoading(false)
+  }
+  const handlePageChange = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
+  const getBrands = async () => {
+    setLoading(true);
+    let result = await readExcelFile1(brand);
+    setBrands(result);
+    setLoading(false);
+
+  }
+
+  useEffect(() => {
+    setPageNumber(0);
+    // getProduct(home, tabLabels[0]);
+    getBrands()
+  }, []);
+  const displayProducts = products.slice(pageNumber * productsPerPage, (pageNumber + 1) * productsPerPage);
 
   return (
-      <Box sx={{ flexGrow: 1, width: '100%' }} height="1200px" className="home-height">
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={12}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} >
-                <Paper style={{ padding: 10, minHeight: '145px', boxShadow: 'none' }}>
-                  <ImageSlider />
-                </Paper>
-              </Grid>
-              <Grid item xs={12} className='contact-form'>
-                <Paper style={{ padding: 10, height: '268px', boxShadow: 'none' }}>
-                  <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs
-                     sx={{
+    <Box sx={{ flexGrow: 1, width: '100%' }} height="1200px" className="home-height">
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} >
+              <Paper style={{ padding: 10, minHeight: '145px', boxShadow: 'none' }}>
+                <ImageSlider />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} className='contact-form'>
+              <Paper style={{ padding: 10, height: '268px', boxShadow: 'none' }}>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  <Tabs
+                    sx={{
                       '& .Mui-selected': {
                         color: 'black',
                         borderBottom: '2px solid black',
@@ -81,47 +110,141 @@ const Home = () => {
                         backgroundColor: 'black', // Set the indicator color to black
                       },
                     }}
-                      value={value}
-                      onChange={handleChange}
-                      textColor="primary" // Set the text color using inline styles
-                      indicatorColor="primary"
-                      aria-label="secondary tabs example"
-                      variant="scrollable"
-                      scrollButtons
-                      allowScrollButtonsMobile
-                    >
-                      <Tab {...a11yProps(0)} label="Top UK & US Brands" />
-                      <Tab {...a11yProps(1)} label="New Arrivals" />
-                      <Tab {...a11yProps(2)} label="Special Offers" />
-                      <Tab {...a11yProps(3)} label="Best Sellers" />
-                    </Tabs>
+                    value={value}
+                    onChange={handleChange}
+                    textColor="primary" // Set the text color using inline styles
+                    indicatorColor="primary"
+                    aria-label="secondary tabs example"
+                    variant="scrollable"
+                    scrollButtons
+                    allowScrollButtonsMobile
+                  >
+                    <Tab {...a11yProps(0)} label="Top UK & US Brands" />
+                    <Tab {...a11yProps(1)} label="New Arrivals" />
+                    <Tab {...a11yProps(2)} label="Special Offers" />
+                    <Tab {...a11yProps(3)} label="Best Sellers" />
+                  </Tabs>
+                </Box>
+                <div role="tabpanel" hidden={value !== 0} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+                  <Box sx={{ p: 3 }}>
+                    {/* <MediaCard products={displayProducts} style={{ margin: '5px' }} /> */}
+                    {loading ? (
+                      <div className="loading-container">
+                        <span>Loading...</span>
+                      </div>
+                    ) :
+                      <MediaCard products={brands}  showPreview="false" type="brands"  style={{ margin: '5px' }} />
+                    }
                   </Box>
-                  <div role="tabpanel" hidden={value !== 0} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
-                    <Box sx={{ p: 3 }}>
-                      <MediaCard products={itemData} style={{ margin: '5px' }} />
-                    </Box>
-                  </div>
-                  <div role="tabpanel" hidden={value !== 1} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
-                    <Box sx={{ p: 3 }}>
-                      <MediaCard products={itemData} style={{ margin: '5px' }} />
-                    </Box>
-                  </div>
-                  <div role="tabpanel" hidden={value !== 2} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
-                    <Box sx={{ p: 3 }}>
-                      <MediaCard products={itemData} style={{ margin: '5px' }} />
-                    </Box>
-                  </div>
-                  <div role="tabpanel" hidden={value !== 3} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
-                    <Box sx={{ p: 3 }}>
-                      <MediaCard products={itemData} style={{ margin: '5px' }} />
-                    </Box>
-                  </div>
-                </Paper>
-              </Grid>
+                  <Box>
+                    {
+                      (!loading && brands.length > 0) &&
+                      <ReactPaginate
+                        pageCount={Math.ceil(brands.length / productsPerPage)}
+                        pageRangeDisplayed={3}
+                        marginPagesDisplayed={1}
+                        onPageChange={handlePageChange}
+                        containerClassName='pagination'
+                        activeClassName={'active'}
+                        disabledClassName={'disabled'}
+                        previousLabel={<span style={{ color: 'black' }}>Previous</span>} // Change color of previous button text
+                        nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
+
+                      />
+                    }
+                  </Box>
+                </div>
+                <div role="tabpanel" hidden={value !== 1} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+                  <Box sx={{ p: 3 }}>
+                    {loading ? (
+                      <div className="loading-container">
+                        <span>Loading...</span>
+                      </div>
+                    ) :
+                      <MediaCard products={displayProducts} style={{ margin: '5px' }} />
+                    }
+
+                  </Box>
+                  <Box>
+                    {
+                      (!loading && displayProducts.length > 0) &&
+                      <ReactPaginate
+                        pageCount={Math.ceil(products.length / productsPerPage)}
+                        pageRangeDisplayed={3}
+                        marginPagesDisplayed={1}
+                        onPageChange={handlePageChange}
+                        containerClassName='pagination'
+                        activeClassName={'active'}
+                        disabledClassName={'disabled'}
+                        previousLabel={<span style={{ color: 'black' }}>Previous</span>} // Change color of previous button text
+                        nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
+
+                      />
+                    }
+                  </Box>
+                </div>
+                <div role="tabpanel" hidden={value !== 2} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+                  <Box sx={{ p: 3 }}>
+                    {loading ? (
+                      <div className="loading-container">
+                        <span>Loading...</span>
+                      </div>
+                    ) :
+                      <MediaCard products={displayProducts} style={{ margin: '5px' }} />
+                    }
+                  </Box>
+                  <Box>
+                    {
+                      (!loading && displayProducts.length > 0) &&
+                      <ReactPaginate
+                        pageCount={Math.ceil(products.length / productsPerPage)}
+                        pageRangeDisplayed={3}
+                        marginPagesDisplayed={1}
+                        onPageChange={handlePageChange}
+                        containerClassName='pagination'
+                        activeClassName={'active'}
+                        disabledClassName={'disabled'}
+                        previousLabel={<span style={{ color: 'black' }}>Previous</span>} // Change color of previous button text
+                        nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
+
+                      />
+                    }
+                  </Box>
+                </div>
+                <div role="tabpanel" hidden={value !== 3} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+                  <Box sx={{ p: 3 }}>
+                    {loading ? (
+                      <div className="loading-container">
+                        <span>Loading...</span>
+                      </div>
+                    ) :
+                      <MediaCard products={displayProducts} style={{ margin: '5px' }} />
+                    }
+                  </Box>
+                  <Box>
+                    {
+                      (!loading && displayProducts.length > 0) &&
+                      <ReactPaginate
+                        pageCount={Math.ceil(products.length / productsPerPage)}
+                        pageRangeDisplayed={3}
+                        marginPagesDisplayed={1}
+                        onPageChange={handlePageChange}
+                        containerClassName='pagination'
+                        activeClassName={'active'}
+                        disabledClassName={'disabled'}
+                        previousLabel={<span style={{ color: 'black' }}>Previous</span>} // Change color of previous button text
+                        nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
+
+                      />
+                    }
+                  </Box>
+                </div>
+              </Paper>
             </Grid>
           </Grid>
         </Grid>
-      </Box>
+      </Grid>
+    </Box>
   )
 }
 

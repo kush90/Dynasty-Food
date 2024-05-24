@@ -8,7 +8,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { readExcelFile1 } from "../../Helper";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
-import SearchOffIcon from '@mui/icons-material/SearchOff';
+import sampleFile from '../../assets/Sample.xlsx';
 
 // Import pagination library
 import ReactPaginate from 'react-paginate';
@@ -33,7 +33,7 @@ const Products = () => {
 
   const getProduct = async () => {
     setLoading(true);
-    let result = await readExcelFile1();
+    let result = await readExcelFile1(sampleFile);
     setProducts(result);
     setLoading(false);
 

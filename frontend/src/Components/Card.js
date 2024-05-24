@@ -13,7 +13,7 @@ import Grid from '@mui/material/Grid';
 import { Typography, Tooltip } from '@mui/material';
 import ImageSliderModal from './SliderModal';
 
-const MediaCard = ({ products }) => {
+const MediaCard = ({ products,showPreview=true,type="products"}) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = useState(false);
@@ -32,13 +32,15 @@ const MediaCard = ({ products }) => {
       {products !== undefined && products.map((item,index) => (
         <ImageListItem key={index} cols={1} rows={1}>
           <img
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            srcSet={type !== 'brands' ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x` :`${item.Img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             src={`${item.img}?w=248&fit=crop&auto=format`}
-            alt={item.productName}
+            alt={type !== 'brands'? item.productName ?? item.name : item.name}
             loading="lazy"
+            style={type === 'brands' ? { objectFit:'contain' } : {}}
+
           />
           <ImageListItemBar
-            title={item.productName + '(' + '\t' + '฿' + item.price + ')'}
+            title={type !== "brands"  ? item.productName : item.Name}
             subtitle={item.category}
 
             actionIcon={
@@ -48,6 +50,7 @@ const MediaCard = ({ products }) => {
                     <ShoppingCartIcon />
                   </IconButton> */}
                 </Grid>
+                {showPreview==true &&
                 <Grid item>
                   <Tooltip title="Image Preview">
                     <IconButton onClick={handleOpen} aria-label={`info about ${item.title}`} sx={{ color: 'white' }}>
@@ -55,6 +58,7 @@ const MediaCard = ({ products }) => {
                     </IconButton>
                   </Tooltip>
                 </Grid>
+            }
               </Grid>
             }
           >
