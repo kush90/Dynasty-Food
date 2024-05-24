@@ -138,17 +138,16 @@ const Home = () => {
                   </Box>
                 </div>
                 <div role="tabpanel" hidden={value !== 1} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
-                  <Box sx={{ p: 3 }}>
+                <Box sx={{ p: 3 }}>
                     {loading ? (
                       <div className="loading-container">
                         <span>Loading...</span>
                       </div>
                     ) :
+                      (
+                      <>
                       <MediaCard products={displayProducts} style={{ margin: '5px' }} />
-                    }
-
-                  </Box>
-                  <Box>
+                      <Box>
                     {
                       (!loading && displayProducts.length > 0) &&
                       <ReactPaginate
@@ -163,20 +162,24 @@ const Home = () => {
                         nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
 
                       />
+                    }
+                  </Box>
+                      </>
+                    )
                     }
                   </Box>
                 </div>
                 <div role="tabpanel" hidden={value !== 2} id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
-                  <Box sx={{ p: 3 }}>
+                <Box sx={{ p: 3 }}>
                     {loading ? (
                       <div className="loading-container">
                         <span>Loading...</span>
                       </div>
                     ) :
+                      (
+                      <>
                       <MediaCard products={displayProducts} style={{ margin: '5px' }} />
-                    }
-                  </Box>
-                  <Box>
+                      <Box>
                     {
                       (!loading && displayProducts.length > 0) &&
                       <ReactPaginate
@@ -191,6 +194,10 @@ const Home = () => {
                         nextLabel={<span style={{ color: 'black' }}>Next</span>} // Change color of next button text
 
                       />
+                    }
+                  </Box>
+                      </>
+                    )
                     }
                   </Box>
                 </div>
@@ -201,10 +208,10 @@ const Home = () => {
                         <span>Loading...</span>
                       </div>
                     ) :
+                      (
+                      <>
                       <MediaCard products={displayProducts} style={{ margin: '5px' }} />
-                    }
-                  </Box>
-                  <Box>
+                      <Box>
                     {
                       (!loading && displayProducts.length > 0) &&
                       <ReactPaginate
@@ -221,6 +228,11 @@ const Home = () => {
                       />
                     }
                   </Box>
+                      </>
+                    )
+                    }
+                  </Box>
+                 
                 </div>
               </Paper>
             </Grid>
