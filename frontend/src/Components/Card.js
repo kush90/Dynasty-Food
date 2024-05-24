@@ -39,7 +39,8 @@ const MediaCard = ({ products,showPreview=true,type="products"}) => {
             style={type === 'brands' ? { objectFit:'contain' } : {}}
 
           />
-          <ImageListItemBar
+          {
+            type !== 'brands' &&  <ImageListItemBar
             title={type !== "brands"  ? item.productName : item.Name}
             subtitle={item.category}
 
@@ -65,6 +66,8 @@ const MediaCard = ({ products,showPreview=true,type="products"}) => {
             <Typography variant="body2">{item.price}</Typography> {/* Display new field */}
 
           </ImageListItemBar>
+          }
+         
         </ImageListItem>
       ))}
       {open && <ImageSliderModal images={['https://images.unsplash.com/photo-1551963831-b3b1ca40c98e', 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25', 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6']} openModal={open} closeModal={handleClose} />}
