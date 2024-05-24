@@ -33,7 +33,7 @@ const MediaCard = ({ products,showPreview=true,type="products"}) => {
         <ImageListItem key={index} cols={1} rows={1}>
           <img
             srcSet={type !== 'brands' ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x` :`${item.Img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=248&fit=crop&auto=format`}
+            src={type !== 'brands' ? `${item.img}?w=248&fit=crop&auto=format` : `${item.Img}?w=248&fit=crop&auto=format&dpr=2 2x` }
             alt={type !== 'brands'? item.productName ?? item.name : item.name}
             loading="lazy"
             style={type === 'brands' ? { objectFit:'contain' } : {}}
