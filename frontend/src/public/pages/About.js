@@ -25,7 +25,7 @@ const About = () => {
       <Grid container spacing={2}>
         {/* First column with one row */}
         <Grid item xs={12} sm={4} className='contact-map' style={{ height: '595px' }}>
-          <Paper sx={{ height: '100%', boxShadow: 'none' }}>
+          <Paper className='about-paper' sx={{ height: '100%', boxShadow: 'none' }}>
             <ResponsiveImage src={logo} alt="Logo" />
           </Paper>
         </Grid>

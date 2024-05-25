@@ -4,20 +4,23 @@
 }
 .header {
     background-color: black !important;
-    .header-text {
+  }
+  
+  .header .header-text {
     height: 96px;
     position: relative;
     top: 23px;
     left: 0px;
-     p {
-        margin:0px;
-     }
-     .header-second-text {
-        position: relative;
-        top:-5px;
-     }
-    }
-}
+  }
+  
+  .header .header-text p {
+    margin: 0px;
+  }
+  
+  .header .header-text .header-second-text {
+    position: relative;
+    top: -5px;
+  }
 
 .menu-title {
     /* text-transform: capitalize !important; */
@@ -320,7 +323,7 @@
         height: fit-content !important;
     }
     .home-height {
-        height: 3900px !important;
+        height: 4020px !important;
     }
 }
 
@@ -349,7 +352,7 @@
     }
 }
 
-@media screen and (min-width: 360px) and (max-width: 390px) {
+@media screen and (min-width: 360px) and (max-width: 400px) {
     .footer-text {
         left: 25% !important;
     }
@@ -360,7 +363,10 @@
         height: fit-content !important;
     }
     .home-height {
-        height: 3570px !important;
+        height: 3600px !important;
+    }
+    .about-paper {
+        height: auto !important;
     }
 }
 
@@ -456,6 +462,15 @@
 }
 .product-margin-left-15 {
     margin-left: 25px !important;
-}  
+} 
+
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+    .product-height {
+        height: 860px !important;
+    }
+    .home-height {
+        height: 1235px !important;
+    }
+}
   
   
