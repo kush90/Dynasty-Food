@@ -72,8 +72,8 @@
 }
 
 .footer {
-    /* position: fixed !important; */
-    bottom: 0 !important;
+    position: static !important;
+    /* bottom: 0 !important; */
     width: 100% !important;
     background-color: black !important;
 
@@ -320,7 +320,25 @@
         height: fit-content !important;
     }
     .home-height {
-        height: 3300px !important;
+        height: 3900px !important;
+    }
+}
+
+@media screen and (min-width: 344px) and (max-width: 375px) {
+    .footer-text {
+        left: 28% !important;
+    }
+    .contact-height{
+        height: 900px !important;
+    }
+    .register-height {
+        height: 890px !important;
+    }
+    .login-height {
+        height: fit-content !important;
+    }
+    .home-height {
+        height: 3200px !important;
     }
 }
 
@@ -342,7 +360,7 @@
         height: fit-content !important;
     }
     .home-height {
-        height: 2950px !important;
+        height: 3570px !important;
     }
 }
 
@@ -357,7 +375,7 @@
         height: fit-content !important;
     }
     .home-height {
-        height: 4300px !important;
+        height: 5200px !important;
     }
 }
 
