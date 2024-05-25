@@ -475,13 +475,22 @@
 
 @media screen and (min-width: 1540px){
     .product-height {
-        height: 100px !important;
+        height: 1000px !important;
     }
     .home-height {
         height: 1380px !important;
     }
     .about-height{
         height: 700px !important;
+    }
+    .contact-height {
+        height: 649px !important;
+    }
+     .register-height {
+        height: 641px !important;
+    }
+    .login-register {
+        height: 641px !important;
     }
 }
   
