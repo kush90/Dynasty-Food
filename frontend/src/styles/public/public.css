@@ -466,10 +466,19 @@
 
 @media screen and (min-width: 1400px) and (max-width: 1540px) {
     .product-height {
-        height: 860px !important;
+        height: 870px !important;
     }
     .home-height {
         height: 1235px !important;
+    }
+}
+
+@media screen and (min-width: 1540px){
+    .product-height {
+        height: 910px !important;
+    }
+    .home-height {
+        height: 1255px !important;
     }
 }
   
