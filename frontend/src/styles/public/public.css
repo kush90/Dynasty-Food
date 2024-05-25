@@ -475,10 +475,13 @@
 
 @media screen and (min-width: 1540px){
     .product-height {
-        height: 910px !important;
+        height: 100px !important;
     }
     .home-height {
-        height: 1255px !important;
+        height: 1380px !important;
+    }
+    .about-height{
+        height: 700px !important;
     }
 }
   
