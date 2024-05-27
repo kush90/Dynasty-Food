@@ -40,7 +40,7 @@ const About = () => {
                 </Typography>
                 <Box style={{ maxHeight: '300px', overflowY: 'scroll' }}>
                   <Typography variant="body2" color="text.secondary">
-                  We have expanded into Thailand's leading online expat stores, offering a wide range of food and drinks imported directly imported from the UK and Europe. We work directly with several leading food and drink manufacturers in the UK to bring you the best of British and European foods.
+                  We have expanded into Thailand's leading online expat stores, offering a wide range of food and drinks imported directly from the UK and Europe. We work directly with several leading food and drink manufacturers in the UK to bring you the best of British and European foods.
                   </Typography>
                 </Box>
               </Paper>

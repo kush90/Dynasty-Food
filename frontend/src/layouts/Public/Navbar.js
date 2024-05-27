@@ -43,7 +43,7 @@ function Navbar() {
 
     return (
         <AppBar position="static" color='warning' className='header'>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" className='navbar'>
                 <Toolbar disableGutters>
                     <Avatar alt="logo" className='logo' src={logo} />
                     <Typography

@@ -471,17 +471,20 @@
     .home-height {
         height: 1235px !important;
     }
+    .navbar {
+        max-width: none !important;
+    }
 }
 
 @media screen and (min-width: 1540px){
     .product-height {
-        height: 1000px !important;
+        height: 1330px !important;
     }
     .home-height {
-        height: 1380px !important;
+        height: 1700px !important;
     }
     .about-height{
-        height: 700px !important;
+        height: 950px !important;
     }
     .contact-height {
         height: 649px !important;
@@ -491,6 +494,9 @@
     }
     .login-height {
         height: 641px !important;
+    }
+    .navbar {
+        max-width: none !important;
     }
 }
   
